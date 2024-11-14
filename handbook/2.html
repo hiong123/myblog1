@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>connmanctl环境适配 | TypeScript4 文档</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="TypeScript4 最新官方文档翻译">
+    
+    <link rel="preload" href="/myblog1/assets/css/0.styles.1d110646.css" as="style"><link rel="preload" href="/myblog1/assets/js/app.6a9b86e1.js" as="script"><link rel="preload" href="/myblog1/assets/js/2.29230202.js" as="script"><link rel="preload" href="/myblog1/assets/js/1.adb73c09.js" as="script"><link rel="preload" href="/myblog1/assets/js/24.a5d7e96a.js" as="script"><link rel="prefetch" href="/myblog1/assets/js/10.acd366ff.js"><link rel="prefetch" href="/myblog1/assets/js/11.2689ba83.js"><link rel="prefetch" href="/myblog1/assets/js/12.137a9576.js"><link rel="prefetch" href="/myblog1/assets/js/13.786f62b7.js"><link rel="prefetch" href="/myblog1/assets/js/14.91be0496.js"><link rel="prefetch" href="/myblog1/assets/js/15.9f59e3b5.js"><link rel="prefetch" href="/myblog1/assets/js/16.47e1d84d.js"><link rel="prefetch" href="/myblog1/assets/js/17.368b07ea.js"><link rel="prefetch" href="/myblog1/assets/js/18.8241d824.js"><link rel="prefetch" href="/myblog1/assets/js/19.56a0d05b.js"><link rel="prefetch" href="/myblog1/assets/js/20.8f60a139.js"><link rel="prefetch" href="/myblog1/assets/js/21.e21ffad3.js"><link rel="prefetch" href="/myblog1/assets/js/22.d7cb3f35.js"><link rel="prefetch" href="/myblog1/assets/js/23.9f8fba70.js"><link rel="prefetch" href="/myblog1/assets/js/3.8af8fcbf.js"><link rel="prefetch" href="/myblog1/assets/js/4.0471e9ae.js"><link rel="prefetch" href="/myblog1/assets/js/5.842b4107.js"><link rel="prefetch" href="/myblog1/assets/js/6.9f813617.js"><link rel="prefetch" href="/myblog1/assets/js/7.deca3814.js"><link rel="prefetch" href="/myblog1/assets/js/vendors~docsearch.934ed2fb.js">
+    <link rel="stylesheet" href="/myblog1/assets/css/0.styles.1d110646.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/myblog1/" class="home-link router-link-active"><!----> <span class="site-name">TypeScript4 文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/myblog1/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="冴羽的 JavaScript 博客" class="dropdown-title"><span class="title">冴羽的 JavaScript 博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="冴羽的 JavaScript 博客" class="mobile-dropdown-title"><span class="title">冴羽的 JavaScript 博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/mqyqingfeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/712139234359182/posts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/myblog1/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="冴羽的 JavaScript 博客" class="dropdown-title"><span class="title">冴羽的 JavaScript 博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="冴羽的 JavaScript 博客" class="mobile-dropdown-title"><span class="title">冴羽的 JavaScript 博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/mqyqingfeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/712139234359182/posts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/myblog1/" class="sidebar-heading clickable router-link-active"><span>欢迎学习</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/myblog1/" aria-current="page" class="sidebar-link">学前必读</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/myblog1/handbook/1" class="sidebar-heading clickable open"><span>基础学习</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/myblog1/handbook/1.html" class="sidebar-link">条件类型1</a></li><li><a href="/myblog1/handbook/2.html" aria-current="page" class="active sidebar-link">泛型2</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/myblog1/handbook/2.html#connmanctl" class="sidebar-link">connmanctl</a></li><li class="sidebar-sub-header"><a href="/myblog1/handbook/2.html#wpa-cli" class="sidebar-link">wpa_cli</a></li><li class="sidebar-sub-header"><a href="/myblog1/handbook/2.html#设置动态、静态ip" class="sidebar-link">设置动态、静态IP</a></li><li class="sidebar-sub-header"><a href="/myblog1/handbook/2.html#wpa-cli设置静态ip" class="sidebar-link">wpa_cli设置静态IP</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="connmanctl环境适配"><a href="#connmanctl环境适配" class="header-anchor">#</a> connmanctl环境适配</h1> <p>复制/etc/init.d/S22config_env、/etc/init.d/S45connman、/usr/sbin/connmand、/usr/bin/connmanctl 到对应的文件夹中</p> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@MiWiFi-R4AC-srv:/etc/init.d]# cat S22config_env
+#!/bin/sh
+
+connman_dir=/userdata/connman
+
+case &quot;$1&quot; in
+    start)
+        [ ! -d &quot;$connman_dir&quot; ] &amp;&amp; mkdir -p &quot;$connman_dir&quot;
+        [ ! -L &quot;/var/lib/connman&quot; ] &amp;&amp; ln -sf /userdata/connman /var/lib/connman
+        ;;
+    stop)
+        printf &quot;$0 stop finished\n&quot;
+        ;;
+    *)
+        echo &quot;Usage: $0 {start|stop}&quot;
+        exit 1
+        ;;
+esac
+exit 0
+[root@MiWiFi-R4AC-srv:/etc/init.d]# cat S45connman
+#!/bin/sh
+
+case &quot;$1&quot; in
+    start)
+        printf &quot;Starting connman ... &quot;
+        start-stop-daemon -S -q -m -b -p /var/run/connmand.pid --exec /usr/sbin/connmand -- -n
+        echo &quot;done.&quot;
+        ;;
+    stop)
+        printf &quot;Stopping connman ...&quot;
+        start-stop-daemon -K -q -p /var/run/connmand.pid
+        echo &quot;done.&quot;
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+    *)
+        echo &quot;usage: $0 {start|stop|restart}&quot;
+        ;;
+esac
+[root@MiWiFi-R4AC-srv:/etc/init.d]#
+</code></pre></div><h1 id="无线-wlan"><a href="#无线-wlan" class="header-anchor">#</a> 无线（wlan）</h1> <h2 id="connmanctl"><a href="#connmanctl" class="header-anchor">#</a> connmanctl</h2> <h3 id="使用配置文件连接"><a href="#使用配置文件连接" class="header-anchor">#</a> 使用配置文件连接</h3> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@MiWiFi-R4AC-srv:~]# connmanctl disable wifi
+Disabled wifi
+[root@MiWiFi-R4AC-srv:~]# connmanctl enable wifi
+Enabled wifi
+[root@MiWiFi-R4AC-srv:~]# connmanctl scan wifi
+Scan completed for wifi
+[root@MiWiFi-R4AC-srv:~]# connmanctl services
+*AO Wired                ethernet_301f9a701166_cable
+*A  Xiaomi_BFEB          wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+    Hanma                wifi_b813323463f6_48616e6d61_managed_psk
+    ChinaNet-Disv        wifi_b813323463f6_4368696e614e65742d44697376_managed_psk
+    GZLH-2               wifi_b813323463f6_475a4c482d32_managed_psk
+    TP-LINK_D5D0         wifi_b813323463f6_54502d4c494e4b5f44354430_managed_psk
+    guosheng             wifi_b813323463f6_67756f7368656e67_managed_psk
+                         wifi_b813323463f6_hidden_managed_none
+    GZKH-2               wifi_b813323463f6_475a4b482d32_managed_psk
+    GZKH                 wifi_b813323463f6_475a4b48_managed_psk
+    k2p-26F3             wifi_b813323463f6_6b32702d32364633_managed_none
+    TP-LINK_F6A0         wifi_b813323463f6_54502d4c494e4b5f46364130_managed_psk
+[root@MiWiFi-R4AC-srv:~]# vi /var/lib/connman/Xiaomi_BFEB-psk.config
+[root@MiWiFi-R4AC-srv:~]# connmanctl connect wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+Connected wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+[root@MiWiFi-R4AC-srv:~]# connmanctl services
+*AO Wired                ethernet_301f9a701166_cable
+*AR Xiaomi_BFEB          wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+    Hanma                wifi_b813323463f6_48616e6d61_managed_psk
+    ChinaNet-Disv        wifi_b813323463f6_4368696e614e65742d44697376_managed_psk
+    GZLH-2               wifi_b813323463f6_475a4c482d32_managed_psk
+    TP-LINK_D5D0         wifi_b813323463f6_54502d4c494e4b5f44354430_managed_psk
+    guosheng             wifi_b813323463f6_67756f7368656e67_managed_psk
+                         wifi_b813323463f6_hidden_managed_none
+    ChinaNet-ZVy7        wifi_b813323463f6_4368696e614e65742d5a567937_managed_psk
+    H3C_AC05B2_WIFI5     wifi_b813323463f6_4833435f4143303542325f5749464935_managed_none
+    GZKH-2               wifi_b813323463f6_475a4b482d32_managed_psk
+    esoon_app            wifi_b813323463f6_65736f6f6e5f617070_managed_psk
+    GZKH                 wifi_b813323463f6_475a4b48_managed_psk
+    esoon                wifi_b813323463f6_65736f6f6e_managed_psk
+</code></pre></div><p>其中Xiaomi_BFEB-psk.config文件内容</p> <div class="language-ini{.line-numbers} extra-class"><pre class="language-text"><code>[service_wifi_b813323463f6_5869616f6d695f42464542_managed_psk]
+Type = wifi
+Name = Xiaomi_BFEB
+Passphrase = hanma2023
+IPv4 = 192.168.31.218/255.255.255.0/192.168.31.1
+Nameservers = 192.168.31.1,8.8.8.8
+</code></pre></div><p>参考链接
+<a href="https://blog.csdn.net/baidu_33879812/article/details/100098586" target="_blank" rel="noopener noreferrer">connman康恩曼wifi连接<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="使用命令连接"><a href="#使用命令连接" class="header-anchor">#</a> 使用命令连接</h3> <p>启用与禁用 wifi
+执行 connmanctl technologies 来检查 wifi 是否开启，查看类似 Powered: True/False 的输出。</p> <p>连接到公开的接入点</p> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@MiWiFi-R4AC-srv:~]# connmanctl scan wifi
+在扫描之后，列出可用的网络（示例输出）：
+
+[root@MiWiFi-R4AC-srv:~]# connmanctl services
+*AO MyNetwork               wifi_dc85de828967_68756773616d_managed_psk
+    OtherNET                wifi_dc85de828967_38303944616e69656c73_managed_psk
+    AnotherOne              wifi_dc85de828967_3257495245363836_managed_wep
+    FourthNetwork           wifi_dc85de828967_4d7572706879_managed_wep
+    AnOpenNetwork           wifi_dc85de828967_4d6568657272696e_managed_none
+要连接到公开的网络，使用以 wifi_ 开头的第二个参数:
+
+[root@MiWiFi-R4AC-srv:~]# connmanctl connect wifi_dc85de828967_4d6568657272696e_managed_none
+提示：网络名称可以用 tab 补全。
+你现在应该已经连上网络了，使用 connmanctl state 或 ip addr 来检查。
+</code></pre></div><p>连接到受保护的接入点</p> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@MiWiFi-R4AC-srv:~]# connmanctl
+connmanctl&gt; scan wifi
+Scan completed for wifi
+connmanctl&gt; services
+*AO Wired                ethernet_301f9a701166_cable
+    Xiaomi_BFEB          wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+    Hanma                wifi_b813323463f6_48616e6d61_managed_psk
+    GZLH-2               wifi_b813323463f6_475a4c482d32_managed_psk
+    ChinaNet-Disv        wifi_b813323463f6_4368696e614e65742d44697376_managed_psk
+    TP-LINK_D5D0         wifi_b813323463f6_54502d4c494e4b5f44354430_managed_psk
+    TP-LINK_8C46         wifi_b813323463f6_54502d4c494e4b5f38433436_managed_psk
+    ChinaNet-ZVy7        wifi_b813323463f6_4368696e614e65742d5a567937_managed_psk
+    esoon_app            wifi_b813323463f6_65736f6f6e5f617070_managed_psk
+connmanctl&gt; agent on
+Agent registered
+connmanctl&gt; connect wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+Agent RequestInput wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+  Passphrase = [ Type=psk, Requirement=mandatory, Alternates=[ WPS ] ]
+  WPS = [ Type=wpspin, Requirement=alternate ]
+Passphrase? hanma2023
+Connected wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+connmanctl&gt; services
+*AO Wired                ethernet_301f9a701166_cable
+*AR Xiaomi_BFEB          wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+    Hanma                wifi_b813323463f6_48616e6d61_managed_psk
+    GZLH-2               wifi_b813323463f6_475a4c482d32_managed_psk
+    ChinaNet-Disv        wifi_b813323463f6_4368696e614e65742d44697376_managed_psk
+    TP-LINK_D5D0         wifi_b813323463f6_54502d4c494e4b5f44354430_managed_psk
+    Assembly Plant       wifi_b813323463f6_417373656d626c7920506c616e74_managed_psk
+    TP-LINK_8C46         wifi_b813323463f6_54502d4c494e4b5f38433436_managed_psk
+                         wifi_b813323463f6_hidden_managed_none
+    ChinaNet-ZVy7        wifi_b813323463f6_4368696e614e65742d5a567937_managed_psk
+    esoon_app            wifi_b813323463f6_65736f6f6e5f617070_managed_psk
+connmanctl&gt; quit
+[root@MiWiFi-R4AC-srv:~]#
+
+</code></pre></div><p>静态IP</p> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@MiWiFi-R4AC-srv:/userdata/connman]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:11:66 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.115/24 brd 192.168.31.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP8000&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether b8:13:32:34:63:f6 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.49/24 brd 192.168.31.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+[root@MiWiFi-R4AC-srv:/userdata/connman]# ls
+ethernet_301f9a701166_cable  settings  wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl services wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+/net/connman/service/wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+  Type = wifi
+  Security = [ psk, wps ]
+  State = ready
+  Strength = 95
+  Favorite = True
+  Immutable = False
+  AutoConnect = True
+  Name = Xiaomi_BFEB
+  Ethernet = [ Method=auto, Interface=wlan0, Address=B8:13:32:34:63:F6, MTU=1500 ]
+  IPv4 = [ Method=dhcp, Address=192.168.31.49, Netmask=255.255.255.0 ]
+  IPv4.Configuration = [ Method=dhcp ]
+  IPv6 = [  ]
+  IPv6.Configuration = [ Method=off ]
+  Nameservers = [ 192.168.31.1 ]
+  Nameservers.Configuration = [  ]
+  Timeservers = [ 192.168.31.1 ]
+  Timeservers.Configuration = [  ]
+  Domains = [  ]
+  Domains.Configuration = [  ]
+  Proxy = [ Method=direct ]
+  Proxy.Configuration = [  ]
+  Provider = [  ]
+[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl config wifi_b813323463f6_5869616f6d695f42464542_managed_psk --ipv4 manual
+ 192.168.31.149 255.255.255.0 192.168.31.1 --nameservers 192.168.31.1 8.8.8.8
+[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl services wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+/net/connman/service/wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+  Type = wifi
+  Security = [ psk, wps ]
+  State = ready
+  Strength = 95
+  Favorite = True
+  Immutable = False
+  AutoConnect = True
+  Name = Xiaomi_BFEB
+  Ethernet = [ Method=auto, Interface=wlan0, Address=B8:13:32:34:63:F6, MTU=1500 ]
+  IPv4 = [ Method=manual, Address=192.168.31.149, Netmask=255.255.255.0 ]
+  IPv4.Configuration = [ Method=manual, Address=192.168.31.149, Netmask=255.255.255.0, Gateway=192.168.31.1 ]
+  IPv6 = [  ]
+  IPv6.Configuration = [ Method=off ]
+  Nameservers = [ 192.168.31.1, 8.8.8.8 ]
+  Nameservers.Configuration = [ 192.168.31.1, 8.8.8.8 ]
+  Timeservers = [ 192.168.31.1 ]
+  Timeservers.Configuration = [  ]
+  Domains = [  ]
+  Domains.Configuration = [  ]
+  Proxy = [ Method=direct ]
+  Proxy.Configuration = [  ]
+  Provider = [  ]
+[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl config wifi_b813323463f6_5869616f6d695f42464542_managed_psk --ipv4 dhcp
+[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl services wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+/net/connman/service/wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+  Type = wifi
+  Security = [ psk, wps ]
+  State = ready
+  Strength = 94
+  Favorite = True
+  Immutable = False
+  AutoConnect = True
+  Name = Xiaomi_BFEB
+  Ethernet = [ Method=auto, Interface=wlan0, Address=B8:13:32:34:63:F6, MTU=1500 ]
+  IPv4 = [ Method=dhcp, Address=192.168.31.49, Netmask=255.255.255.0 ]
+  IPv4.Configuration = [ Method=dhcp ]
+  IPv6 = [  ]
+  IPv6.Configuration = [ Method=off ]
+  Nameservers = [ 192.168.31.1, 8.8.8.8 ]
+  Nameservers.Configuration = [ 192.168.31.1, 8.8.8.8 ]
+  Timeservers = [ 192.168.31.1 ]
+  Timeservers.Configuration = [  ]
+  Domains = [  ]
+  Domains.Configuration = [  ]
+  Proxy = [ Method=direct ]
+  Proxy.Configuration = [  ]
+  Provider = [  ]
+[root@MiWiFi-R4AC-srv:/userdata/connman]#
+
+
+# 设置自动连接
+config wifi_4479a2e30e16_5445535431363838_managed_psk --autoconnect no
+config wifi_4479a2e30e16_5445535431363838_managed_psk--autoconnect yes
+# 移除
+config wifi_4479a2e30e16_5445535431363838_managed_psk --remove
+</code></pre></div><h3 id="其他常用命令"><a href="#其他常用命令" class="header-anchor">#</a> 其他常用命令</h3> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl technologies
+/net/connman/technology/p2p
+  Name = P2P
+  Type = p2p
+  Powered = False
+  Connected = False
+  Tethering = False
+/net/connman/technology/ethernet
+  Name = Wired
+  Type = ethernet
+  Powered = True
+  Connected = True
+  Tethering = False
+/net/connman/technology/wifi
+  Name = WiFi
+  Type = wifi
+  Powered = True
+  Connected = False
+  Tethering = False
+[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl services wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+/net/connman/service/wifi_b813323463f6_5869616f6d695f42464542_managed_psk
+  Type = wifi
+  Security = [ psk, wps ]
+  State = ready
+  Strength = 100
+  Favorite = True
+  Immutable = True
+  AutoConnect = True
+  Name = Xiaomi_BFEB
+  Ethernet = [ Method=auto, Interface=wlan0, Address=B8:13:32:34:63:F6, MTU=1500 ]
+  IPv4 = [ Method=fixed, Address=192.168.31.218, Netmask=255.255.255.0, Gateway=192.168.31.1 ]
+  IPv4.Configuration = [ Method=fixed, Address=192.168.31.218, Netmask=255.255.255.0, Gateway=192.168.31.1 ]
+  IPv6 = [  ]
+  IPv6.Configuration = [ Method=auto, Privacy=disabled ]
+  Nameservers = [ 192.168.31.1, 8.8.8.8 ]
+  Nameservers.Configuration = [  ]
+  Timeservers = [ 192.168.31.1 ]
+  Timeservers.Configuration = [  ]
+  Domains = [  ]
+  Domains.Configuration = [  ]
+  Proxy = [ Method=direct ]
+  Proxy.Configuration = [  ]
+  Provider = [  ]
+</code></pre></div><h3 id="疑难杂症"><a href="#疑难杂症" class="header-anchor">#</a> 疑难杂症</h3> <p>Error /net/connman/technology/wifi: Not supported</p> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl scan wifi
+Error /net/connman/technology/wifi: Not supported
+[root@MiWiFi-R4AC-srv:/userdata/connman]# wpa_supplicant -u &amp;
+[root@MiWiFi-R4AC-srv:/userdata/connman]# Successfully initialized wpa_supplicant
+WPS: Converting push_button to virtual_push_button for WPS 2.0 compliance
+[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl scan wifi
+Scan completed for wifi
+</code></pre></div><h2 id="wpa-cli"><a href="#wpa-cli" class="header-anchor">#</a> wpa_cli</h2> <h3 id="使用配置文件连接-2"><a href="#使用配置文件连接-2" class="header-anchor">#</a> 使用配置文件连接</h3> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@RV1126_RV1109:~]# ifconfig wlan0 down
+[root@RV1126_RV1109:~]# killall wpa_supplicant
+[root@RV1126_RV1109:~]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:30:f5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.108/24 brd 192.168.31.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether 50:41:1c:bf:18:24 brd ff:ff:ff:ff:ff:ff
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant scan
+Failed to connect to non-global ctrl_ifname: wlan0  error: No such file or directory
+[root@RV1126_RV1109:~]# export LD_LIBRARY_PATH=/hanma/lib:${LD_LIBRARY_PATH}
+[root@RV1126_RV1109:~]# wpa_supplicant -D nl80211 -c /data/cfg/wpa_supplicant.conf -i wlan0 -B
+Successfully initialized wpa_supplicant
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant scan
+OK
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant scan_results
+bssid / frequency / signal level / flags / ssid
+8c:53:c3:87:bf:ec       2447    -18     [WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]       Xiaomi_BFEB
+a8:c9:8a:7c:88:07       2412    -36     [WPA-PSK-CCMP][WPA2-PSK-CCMP][ESS]      Hanma
+cc:c2:e0:67:94:89       2472    -34     [WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]    ChinaNet-Disv
+3c:06:a7:4d:d5:d0       2437    -57     [WPA-PSK-CCMP][WPA2-PSK-CCMP][ESS]      TP-LINK_D5D0
+70:c6:dd:36:78:e0       2462    -56     [WPA-PSK-CCMP][WPA2-PSK-CCMP][ESS]      GZLH-2
+60:3a:7c:25:8c:46       2457    -64     [WPA-PSK-CCMP][WPA2-PSK-CCMP][ESS]      TP-LINK_8C46
+08:3a:38:ac:05:b4       2462    -70     [WPA-PSK-CCMP][WPA2-PSK-CCMP][ESS]      GZKH
+[root@RV1126_RV1109:~]# vi /data/cfg/wpa_supplicant.conf
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant reconfigure
+OK
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant status
+bssid=8c:53:c3:87:bf:ec
+freq=2447
+ssid=Xiaomi_BFEB
+id=0
+mode=station
+pairwise_cipher=CCMP
+group_cipher=TKIP
+key_mgmt=WPA2-PSK
+wpa_state=COMPLETED
+ip_address=192.168.31.51
+p2p_device_address=52:41:1c:bf:18:24
+address=50:41:1c:bf:18:24
+uuid=c63e8730-ff1c-5838-a816-6abf30371e8f
+[root@RV1126_RV1109:~]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:30:f5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.108/24 brd 192.168.31.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether 50:41:1c:bf:18:24 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.51/24 brd 192.168.31.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant reconnect
+OK
+[root@RV1126_RV1109:~]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:30:f5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.108/24 brd 192.168.31.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether 50:41:1c:bf:18:24 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.51/24 brd 192.168.31.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+[root@RV1126_RV1109:~]#
+</code></pre></div><p>其中 /data/cfg/wpa_supplicant.conf</p> <div class="language-{.line-numbers} extra-class"><pre class="language-text"><code>ctrl_interface=/var/run/wpa_supplicant
+update_config=1
+
+network={
+        ssid=&quot;Xiaomi_BFEB&quot;
+        scan_ssid=1
+        psk=&quot;hanma2023&quot;
+}
+
+</code></pre></div><h3 id="使用命令配置"><a href="#使用命令配置" class="header-anchor">#</a> 使用命令配置</h3> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@RV1126_RV1109:~]# ifconfig wlan0 down
+[root@RV1126_RV1109:~]# killall wpa_supplicant
+[root@RV1126_RV1109:~]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:30:f5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.108/24 brd 192.168.31.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether 50:41:1c:bf:18:24 brd ff:ff:ff:ff:ff:ff
+[root@RV1126_RV1109:~]# export LD_LIBRARY_PATH=/hanma/lib:${LD_LIBRARY_PATH}
+[root@RV1126_RV1109:~]# wpa_supplicant -D nl80211 -c /data/cfg/wpa_supplicant.conf -i wlan0 -B
+Successfully initialized wpa_supplicant
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant remove_network 0
+OK
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant ap_scan 1
+OK
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant add_network
+0
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant status
+wpa_state=INACTIVE
+p2p_device_address=52:41:1c:bf:18:24
+address=50:41:1c:bf:18:24
+uuid=c63e8730-ff1c-5838-a816-6abf30371e8f
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant set_network 0 ssid '&quot;Hanma&quot;'
+OK
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant set_network 0 key_mgmt WPA-PSK
+OK
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant set_network 0 psk '&quot;@Hanma2018&quot;'
+OK
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant select_network 0
+OK
+[root@RV1126_RV1109:~]# cat /data/cfg/wpa_supplicant.conf
+ctrl_interface=/var/run/wpa_supplicant
+update_config=1
+
+network={
+        ssid=&quot;Xiaomi_BFEB&quot;
+        scan_ssid=1
+        psk=&quot;hanma2023&quot;
+}
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant save_config
+OK
+[root@RV1126_RV1109:~]# wpa_cli -i wlan0 -p /var/run/wpa_supplicant status
+bssid=a8:c9:8a:7c:88:07
+freq=2412
+ssid=Hanma
+id=0
+mode=station
+pairwise_cipher=CCMP
+group_cipher=CCMP
+key_mgmt=WPA2-PSK
+wpa_state=COMPLETED
+ip_address=192.168.0.103
+p2p_device_address=52:41:1c:bf:18:24
+address=50:41:1c:bf:18:24
+uuid=c63e8730-ff1c-5838-a816-6abf30371e8f
+[root@RV1126_RV1109:~]# cat /data/cfg/wpa_supplicant.conf
+ctrl_interface=/var/run/wpa_supplicant
+update_config=1
+
+network={
+        ssid=&quot;Hanma&quot;
+        psk=&quot;@Hanma2018&quot;
+        key_mgmt=WPA-PSK
+}
+[root@RV1126_RV1109:~]#
+</code></pre></div><p>连接不加密的热点</p> <blockquote><p>wpa_cli -i wlan0 -p /var/run/wpa_supplicant set_network 0 key_mgmt NONE</p></blockquote> <h3 id="疑难杂症-2"><a href="#疑难杂症-2" class="header-anchor">#</a> 疑难杂症</h3> <p>1、Failed to connect to non-global ctrl_ifname: wlan0  error: No such file or directory</p> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@MiWiFi-R4AC-srv:/userdata/connman]# wpa_cli -i wlan0 status
+Failed to connect to non-global ctrl_ifname: wlan0  error: No such file or directory
+[root@MiWiFi-R4AC-srv:/userdata/connman]# wpa_supplicant -D nl80211 -c /data/cfg/wpa_supplicant.conf -i wlan0 -B
+Successfully initialized wpa_supplicant
+[root@MiWiFi-R4AC-srv:/userdata/connman]# wpa_cli -i wlan0 status
+wpa_state=SCANNING
+ip_address=192.168.31.218
+p2p_device_address=ba:13:32:34:63:f6
+address=b8:13:32:34:63:f6
+uuid=b60e10d5-0f1d-571b-8af7-9735c1589308
+</code></pre></div><h3 id="参考文档"><a href="#参考文档" class="header-anchor">#</a> 参考文档</h3> <p>/docs/Linux/Wifibt/Rockchip_Developer_Guide_Linux_WIFI_BT_CN.pdf</p> <h3 id="使用静态ip"><a href="#使用静态ip" class="header-anchor">#</a> 使用静态IP</h3> <p>在 /etc/dhcpcd.conf 添加</p> <div class="language-{.line-numbers} extra-class"><pre class="language-text"><code>interface wlan0
+static ip_address=192.168.31.52/24
+static routers=192.168.31.1
+static domain_name_servers=192.168.31.1 8.8.8.8
+</code></pre></div><p>掩码换算</p> <div class="language-cpp{.line-numbers} extra-class"><pre class="language-text"><code>int dotToInt(QString netmask){
+    QStringList netmaskList = netmask.split(&quot;.&quot;);
+    int iNetmask = ((netmaskList[0].toInt())&lt;&lt;24)+((netmaskList[1].toInt())&lt;&lt;16)+\
+                ((netmaskList[2].toInt())&lt;&lt;8)+((netmaskList[3].toInt()));
+    int _netmask = 0;
+    int tag = 1;
+    while (tag != 0) {
+        if ((tag&amp;iNetmask) != 0) {
+            _netmask++;
+        }
+        tag = tag &lt;&lt; 1;
+    }
+    return _netmask;
+}
+</code></pre></div><p>重新分配IP</p> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@RV1126_RV1109:~]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:30:f5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.108/24 brd 192.168.31.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether 50:41:1c:bf:18:24 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.52/24 brd 192.168.31.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+[root@RV1126_RV1109:~]# ip addr flush wlan0;
+[root@RV1126_RV1109:~]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:30:f5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.108/24 brd 192.168.31.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether 50:41:1c:bf:18:24 brd ff:ff:ff:ff:ff:ff
+[root@RV1126_RV1109:~]# /etc/init.d/S41dhcpcd restart;
+Stopping dhcpcd...
+stopped /sbin/dhcpcd (pid 3709)
+Starting dhcpcd...
+dev: loaded udev
+all: IPv6 kernel autoconf disabled
+all: IPv6 kernel autoconf disabled
+DUID 00:01:00:01:c7:92:bc:8e:00:00:00:00:00:00
+eth0: IAID 9a:70:30:f5
+eth0: adding address fe80::a2de:c13e:34ee:c330
+if_addaddress6: Operation not supported
+wlan0: IAID 1c:bf:18:24
+wlan0: adding address fe80::9220:b834:4adc:76e9
+if_addaddress6: Operation not supported
+wlan0: probing address 192.168.31.52/24
+eth0: rebinding lease of 192.168.31.108
+eth0: leased 192.168.31.108 for 43200 seconds
+eth0: changing route to 192.168.31.0/24
+eth0: changing default route via 192.168.31.1
+forked to background, child pid 3440
+[root@RV1126_RV1109:~]# cat /etc/init.d/S41dhcpcd
+#!/bin/sh
+#
+# Start/stop dhcpcd
+#
+
+DAEMON=/sbin/dhcpcd
+CONFIG=/etc/dhcpcd.conf
+PIDFILE=/var/run/dhcpcd.pid
+
+[ -x $DAEMON ] || exit 0
+[ -f $CONFIG ] || exit 0
+
+case &quot;$1&quot; in
+  start)
+        echo &quot;Starting dhcpcd...&quot;
+        start-stop-daemon -S -x &quot;$DAEMON&quot; -p &quot;$PIDFILE&quot; -- -f &quot;$CONFIG&quot;
+        ;;
+  stop)
+        echo &quot;Stopping dhcpcd...&quot;
+        start-stop-daemon -K -x &quot;$DAEMON&quot; -p &quot;$PIDFILE&quot; -o
+        ;;
+  reload|force-reload)
+        echo &quot;Reloading dhcpcd configuration...&quot;
+        &quot;$DAEMON&quot; -s reload
+        ;;
+  restart)
+        &quot;$0&quot; stop
+        sleep 1 # Prevent race condition: ensure dhcpcd stops before start.
+        &quot;$0&quot; start
+        ;;
+  *)
+        echo &quot;Usage: $0 {start|stop|restart|reload|force-reload}&quot;
+        exit 1
+esac
+[root@RV1126_RV1109:~]#
+</code></pre></div><h1 id="以太网-ethernet"><a href="#以太网-ethernet" class="header-anchor">#</a> 以太网（Ethernet）</h1> <h2 id="设置动态、静态ip"><a href="#设置动态、静态ip" class="header-anchor">#</a> 设置动态、静态IP</h2> <div class="language-shell{.line-numbers} extra-class"><pre class="language-text"><code>[root@MiWiFi-R4AC-srv:/userdata/connman]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:11:66 brd ff:ff:ff:ff:ff:ff
+3: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP8000&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether b8:13:32:34:63:f6 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.49/24 brd 192.168.31.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl config ethernet_301f9a701166_cable --ipv4 manual 192.168.31.116 255.255.255.0 192.168.31.1 --nameservers 192.168.31.1 8.8.8.8
+[root@MiWiFi-R4AC-srv:/userdata/connman]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:11:66 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.116/24 brd 192.168.31.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP8000&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether b8:13:32:34:63:f6 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.49/24 brd 192.168.31.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+[root@MiWiFi-R4AC-srv:/userdata/connman]# connmanctl config ethernet_301f9a701166_cable --ipv4 dhcp
+[root@MiWiFi-R4AC-srv:/userdata/connman]# ip addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq qlen 1000
+    link/ether 30:1f:9a:70:11:66 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.115/24 brd 192.168.31.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP8000&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether b8:13:32:34:63:f6 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.49/24 brd 192.168.31.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+[root@MiWiFi-R4AC-srv:/userdata/connman]#
+</code></pre></div><h2 id="wpa-cli设置静态ip"><a href="#wpa-cli设置静态ip" class="header-anchor">#</a> wpa_cli设置静态IP</h2> <p>在 /etc/dhcpcd.conf 添加</p> <div class="language-{.line-numbers} extra-class"><pre class="language-text"><code>interface eth0
+static ip_address=192.168.31.52/24
+static routers=192.168.31.1
+static domain_name_servers=192.168.31.1 8.8.8.8
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/myblog1/handbook/1.html" class="prev">
+        条件类型1
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/myblog1/assets/js/app.6a9b86e1.js" defer></script><script src="/myblog1/assets/js/2.29230202.js" defer></script><script src="/myblog1/assets/js/1.adb73c09.js" defer></script><script src="/myblog1/assets/js/24.a5d7e96a.js" defer></script>
+  </body>
+</html>
